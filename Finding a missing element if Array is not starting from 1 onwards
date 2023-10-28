@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+struct Array
+{
+    int A[10];
+    int size;
+    int length;
+};
+
+int FME2(struct Array arr)
+{
+    int diff;
+    int l, h, n;
+    l = arr.A[0];
+    diff = l - 0;
+    n = arr.length;
+    for (int i = 0; i < n; i++)
+    {
+        if (diff != arr.A[i] - i)
+        {
+            return diff + i;
+            break;
+        }
+    }
+}
+int main()
+{
+    struct Array arr = {{5, 6, 8, 9}, 10, 5};
+    printf("%d", FME2(arr));
+
+    return 0;
+}
